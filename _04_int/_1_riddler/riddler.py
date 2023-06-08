@@ -1,13 +1,25 @@
-"""
-* Write a python program that asks the user a minimum of 3 riddles.
+from tkinter import simpledialog, Tk, messagebox
 
-* You can look at riddles.com if you don't already know any riddles.
-
-* Collect the response of each riddle from the user and compare their
-  answers to the correct answer. 
-
-* Use a variable to keep track of the correctly answered riddles
-
-* After all the riddles have been asked, tell the user how many they got
-  correct
-"""
+if __name__ == '__main__':
+    window = Tk()
+    window.withdraw()
+    score = 0
+    rid1 = simpledialog.askstring(title="Riddle 1:", prompt="The more you take, the more you leave behind. What am I?")
+    if rid1 == "Footprints":
+        print("Correct!")
+        score = score + 1
+    else:
+        print("Incorrect")
+    rid2 = simpledialog.askstring(title="Riddle 2:", prompt="What has a head, no legs, brown, and a tail?")
+    if rid2 == "A penny":
+        print("Correct!")
+        score = score + 1
+    else:
+        print("Incorrect")
+    rid3 = simpledialog.askstring(title="Riddle 3:", prompt="What belongs to you, but other people use more than you?")
+    if rid3 == "Your name":
+        print("Correct!")
+        score = score + 1
+    else:
+        print("Incorrect")
+    messagebox.showinfo(title="Results:", message="You got a " + str(score) + " out of 3!")
